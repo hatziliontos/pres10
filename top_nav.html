@@ -6,7 +6,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script language='JavaScript' type='text/JavaScript'>
 function load() {
-  url_='http://iot2014iot.no-ip.org:22223';
+  url_='http://pres10.no-ip.org:22226';
   jQuery.get(url_+'/Backup/lan_ip.log',        function (data) {document.getElementById("lanip").innerHTML="LANIP:"+data;},'text');
   jQuery.get(url_+'/Backup/wget_dyndns_IP.log',function (data) {document.getElementById("wanip").innerHTML="WANIP:"+data;},'text');
   url_='http://htmlpreview.github.io/?https://github.com/hatziliontos/common/blob/master/';
@@ -32,7 +32,7 @@ body {
 </style>
 </head>
 <body onload="load()">
-<h4>Συνεχής Ενεργειακή Επιτήρηση Ορεστιάδας</h4>
+<h4>Συνεχής Επιτήρηση Υδραυλικής Πίεσης Καλλικράτειας</h4>
 <p>
    <a href="epitirisi.html" target="menu">Ζωντανή Επιτήρηση</a> |
    <a href="local_history.html" target="menu">Επιτήρηση Αρχείου</a> | 
