@@ -1,0 +1,50 @@
+<!--
+-->
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script language='JavaScript' type='text/JavaScript'>
+function load() {
+  url_='http://iot2014iot.no-ip.org:22223';
+  jQuery.get(url_+'/Backup/lan_ip.log',        function (data) {document.getElementById("lanip").innerHTML="LANIP:"+data;},'text');
+  jQuery.get(url_+'/Backup/wget_dyndns_IP.log',function (data) {document.getElementById("wanip").innerHTML="WANIP:"+data;},'text');
+  url_='http://htmlpreview.github.io/?https://github.com/hatziliontos/common/blob/master/';
+  document.getElementById("about").href=url_+'about.html';
+  document.getElementById("help").href=url_+'help.html';
+  document.getElementById("newsletter").href=url_+'newsletter.html';
+  curval_();
+}
+function curval_() {
+  url_='https://api.thingspeak.com/channels/11468/fields/1/last';
+  jQuery.get(url_,function (data) {document.getElementById("curval").innerHTML="CurVal:"+data+"Amps";},'text');
+  setTimeout(curval_, 20000);
+}
+</script>
+<title>Συνεχής Ενεργειακή Επιτήρηση</title>
+<style type="text/css">
+body {
+   font-family:verdana,arial,sans-serif;
+   font-size:9pt;
+   margin:9px;
+   background-color:#a08029;
+   }
+</style>
+</head>
+<body onload="load()">
+<h4>Συνεχής Ενεργειακή Επιτήρηση Ορεστιάδας</h4>
+<p>
+   <a href="epitirisi.html" target="menu">Ζωντανή Επιτήρηση</a> |
+   <a href="local_history.html" target="menu">Επιτήρηση Αρχείου</a> | 
+   <a href="service.html" target="menu">Service</a> | 
+   <a id="about"      href="about.html" target="menu">Σχετικά</a> | 
+   <a id="help"       href="help.html" target="menu">Βοήθεια</a> | 
+   <a id="newsletter" href="newsletter.html" target="menu">Ανακοινώσεις</a> | 
+</p>
+<p>
+   <label id="lanip" >LANIP:</label> | 
+   <label id="wanip" >WANIP:</label> |
+   <label id="curval" >CurVal:</label> |
+</p>   
+</body>
+</html>
