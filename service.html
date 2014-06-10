@@ -1,0 +1,67 @@
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<script language='JavaScript' type='text/JavaScript'>
+function load() { 
+  url_='http://pres10.no-ip.org:22226';
+  document.getElementById("wget_dyndns_IP").href=url_+'/Backup/wget_dyndns_IP.log';
+  document.getElementById("lan_ip"        ).href=url_+'/Backup/lan_ip.log';
+  document.getElementById("ddclient_cache").href=url_+'/ddclient.cache';
+  document.getElementById("nmap"          ).href=url_+'/Backup/nmap.xml';           document.getElementById("nmap_"          ).href=url_+'/test.js?query=nmap';
+  document.getElementById("ifconfig"      ).href=url_+'/Backup/ifconfig.log';       document.getElementById("ifconfig_"      ).href=url_+'/test.js?query=ifconfig';
+  document.getElementById("profile_exec"  ).href=url_+'/test.js?query=profile_exec';
+  document.getElementById("dirall"        ).href=url_+'/Backup/dirall.log';         document.getElementById("dirall_"        ).href=url_+'/test.js?query=dirall';
+  document.getElementById("dmesg"         ).href=url_+'/Backup/dmesg.log';          document.getElementById("dmesg_"         ).href=url_+'/test.js?query=dmesg';
+  document.getElementById("journalctl"    ).href=url_+'/Backup/journalctl.log';     document.getElementById("journalctl_"    ).href=url_+'/test.js?query=journalctl';
+  document.getElementById("usb-devices"   ).href=url_+'/Backup/usb-devices.log';    document.getElementById("usb-devices_"   ).href=url_+'/test.js?query=usb-devices';
+  document.getElementById("df"            ).href=url_+'/Backup/df.log';             document.getElementById("df_"            ).href=url_+'/test.js?query=df';
+  document.getElementById("psaux"         ).href=url_+'/Backup/psaux.log';          document.getElementById("psaux_"         ).href=url_+'/test.js?query=psaux';
+  document.getElementById("restarts"      ).href=url_+'/restarts.txt';
+  document.getElementById("bdb_sda1"      ).href=url_+'/Backup/bdb_sda1.log';       document.getElementById("bdb_sda1_"      ).href=url_+'/test.js?query=bdb';
+  document.getElementById("bdb_mmcblk0p1" ).href=url_+'/Backup/bdb_mmcblk0p1.log';
+  document.getElementById("bdb_mmcblk0p2" ).href=url_+'/Backup/bdb_mmcblk0p2.log';
+  document.getElementById("bdb_mmcblk0p5" ).href=url_+'/Backup/bdb_mmcblk0p5.log';
+  document.getElementById("fsck_sda1"     ).href=url_+'/Backup/fsck_sda1.log';      document.getElementById("fsck_sda1_"     ).href=url_+'/test.js?query=fsck';
+  document.getElementById("fsck_mmcblk0p1").href=url_+'/Backup/fsck_mmcblk0p1.log';
+  document.getElementById("fsck_mmcblk0p2").href=url_+'/Backup/fsck_mmcblk0p2.log';
+  document.getElementById("fsck_mmcblk0p5").href=url_+'/Backup/fsck_mmcblk0p5.log';
+}
+</script>
+<title>Συνεχής Επιτήρηση Υδραυλικής Πίεσης</title>
+<style type="text/css">
+body {
+   font-family:verdana,arial,sans-serif;
+   font-size:8pt;
+   margin:10px;
+   background-color:#ff6600;
+   }
+</style>
+</head>
+<body onload="load()">
+<h3>Service</h3>
+<h4>Δίκτυο</h4>
+<p><a href="" target="content" id="wget_dyndns_IP">WAN IP              </a></p>
+<p><a href="" target="content" id="lan_ip"        >LAN IP              </a></p>
+<p><a href="" target="content" id="ddclient_cache">DDCLIENT            </a></p>
+<p><a href="" target="content" id="nmap"          >NMAP                </a>|<a href="" target="content" id="nmap_"          >..</a></p>
+<p><a href="" target="content" id="ifconfig"      >IFCONIG             </a>|<a href="" target="content" id="ifconfig_"      >..</a></p>
+<h4>Μικροϋπολογιστής</h4>
+<p><a href="" target="content" id="profile_exec"  >Refresh profile     </a></p>
+<p><a href="" target="content" id="dirall"        >Dir all             </a>|<a href="" target="content" id="dirall_"        >..</a></p>
+<p><a href="" target="content" id="dmesg"         >DMESG               </a>|<a href="" target="content" id="dmesg_"         >..</a></p>
+<p><a href="" target="content" id="journalctl"    >JOURNALCTL          </a>|<a href="" target="content" id="journalctl_"    >..</a></p>
+<p><a href="" target="content" id="usb-devices"   >USB devices         </a>|<a href="" target="content" id="usb-devices_"   >..</a></p>
+<p><a href="" target="content" id="df"            >FS stats            </a>|<a href="" target="content" id="df_"            >..</a></p>
+<p><a href="" target="content" id="psaux"         >Processes           </a>|<a href="" target="content" id="psaux_"         >..</a></p>
+<h4>File system</h4>
+<p><a href="" target="content" id="restarts"      >Restarts            </a></p>
+<p><a href="" target="content" id="bdb_sda1"      >sda1 Bad blocks     </a>|<a href="" target="content" id="bdb_sda1_"      >..</a></p>
+<p><a href="" target="content" id="bdb_mmcblk0p1" >mmcblk0p1 Bdb       </a>|</p>
+<p><a href="" target="content" id="bdb_mmcblk0p2" >mmcblk0p2 Bdb       </a>|</p>
+<p><a href="" target="content" id="bdb_mmcblk0p5" >mmcblk0p5 Bdb       </a>|</p>
+<p><a href="" target="content" id="fsck_sda1"     >sda1 FS checked     </a>|<a href="" target="content" id="fsck_sda1_"     >..</a></p>
+<p><a href="" target="content" id="fsck_mmcblk0p1">mmcblk0p1 FS checked</a>|</p>
+<p><a href="" target="content" id="fsck_mmcblk0p2">mmcblk0p2 FS checked</a>|</p>
+<p><a href="" target="content" id="fsck_mmcblk0p5">mmcblk0p5 FS checked</a>|</p>
+</body>
+</html>
