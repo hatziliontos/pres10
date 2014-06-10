@@ -16,8 +16,8 @@ function load() {
   curval_();
 }
 function curval_() {
-  url_='https://api.thingspeak.com/channels/11468/fields/1/last';
-  jQuery.get(url_,function (data) {document.getElementById("curval").innerHTML="CurVal:"+data+"Amps";},'text');
+  url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+  jQuery.get(url_,function (data) {document.getElementById("curval").innerHTML="CurVal:"+data+"mH2O";},'text');
   setTimeout(curval_, 20000);
 }
 </script>
