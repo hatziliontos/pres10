@@ -9,6 +9,7 @@ function load() {
   document.getElementById("logrep24h"  ).href=url_+'/test.js?query=logrep24h';
   var daten=new Date();
   document.getElementById("24oro"      ).href=url_+'/Backup/'+daten.getFullYear()+'_'+('00'+(1*daten.getMonth()+1)).slice(-2)+'_'+('00'+daten.getDate()).slice(-2)+'.txt';
+  document.getElementById("logrepall"  ).href=url_+'/Backup/logrep24h.log';
 }
 </script>
 <title>Συνεχής Επιτήρηση Υδραυλικής Πίεσης</title>
@@ -28,10 +29,9 @@ body {
   <p><a id="logrep15min" href="" target="content">Μετρήσεις 15λεπτου</a></p>
   <p><a id="24oro"       href="" target="content">Μετρήσεις 24ωρου</a></p>
   <p><a id="logrep24h"   href="" target="content">Μηνύματα 24ωρου</a></p>
+  <p><a id="logrepall"   href="" target="content">Μηνύματα Εξαρχής</a></p>
 <h4>Αναλυτικό διάγραμμα</h4>
   <p><a href="epitirisi_analytical.html" target="content">Γενικές επιλογές</a></p>
-<h4>Συγκριτικά διαγράμματα</h4>
-  <p><a href="epitirisi_2days.html" target="content">Δύο 24ώρων</a></p>
 <h4>Κάμερες</h4>
   <p><a href="http://htmlpreview.github.io/?https://github.com/hatziliontos/common/blob/master/cams.html" target="content">Κάμερες</a></p>
 </body>
