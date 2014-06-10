@@ -1,0 +1,36 @@
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<script language='JavaScript' type='text/JavaScript'>
+function load() { 
+  url_='http://pres10.no-ip.org:22226';
+  document.getElementById("dirtxt"     ).href=url_+'/test.js?query=dirtxt';
+  document.getElementById("logrep15min").href=url_+'/test.js?query=logrep15min';
+  document.getElementById("logrep24h"  ).href=url_+'/test.js?query=logrep24h';
+}
+</script>
+<title>Συνεχής Επιτήρηση Υδραυλικής Πίεσης</title>
+<style type="text/css">
+body {
+   font-family:verdana,arial,sans-serif;
+   font-size:10pt;
+   margin:10px;
+   background-color:#ff6600;
+   }
+</style>
+</head>
+<body onload="load()">
+<h3>Τοπικό ιστορικό</h3>
+<h4>Πίνακες</h4>
+  <p><a id="dirtxt"      href="" target="content">Ημερήσια Αρχεία</a></p>
+  <p><a id="logrep15min" href="" target="content">Τελευταίο 15λεπτο</a></p>
+  <p><a id="logrep24h"   href="" target="content">Τελευταίο 24ωρο</a></p>
+<h3>Απομακρυσμένο ιστορικό</h3>
+<h4>Αναλυτικό διάγραμμα</h4>
+  <p><a href="epitirisi_analytical.html" target="content">Γενικές επιλογές</a></p>
+<h4>Συγκριτικά διαγράμματα</h4>
+  <p><a href="epitirisi_2days.html" target="content">Δύο 24ώρων</a></p>
+<h4>Κάμερες</h4>
+  <p><a href="cams.html" target="content">Κάμερες</a></p>
+</body>
+</html>
