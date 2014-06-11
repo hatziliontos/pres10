@@ -10,7 +10,27 @@ body {
    background-color:#ffcc00;
    }
 </style>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+        var pres10=0;
+        jQuery.get(url_,function (data) {pres10=0.1*data;},'text');
+        var data = google.visualization.arrayToDataTable([['Pressure', pres10]]);
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
+<div id='chart_div'></div>
 </body>
 </html>
