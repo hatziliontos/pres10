@@ -21,11 +21,11 @@ body {
       ['mH2O',0],
     ]);
     var options = {
-	  min:        0, max:      70,
-      width:    440, height:  440,
-      redFrom:    0, redTo:    30,
-      greenFrom: 30, greenTo:  50,
-      yellowFrom:50, yellowTo: 70,
+      min:         0, max:      70,
+      width:     440, height:  440,
+      redFrom:     0, redTo:    30,
+      greenFrom:  30, greenTo:  50,
+      yellowFrom: 50, yellowTo: 70,
       minorTicks: 10,
       animation:{
           duration: 2000,
@@ -35,13 +35,13 @@ body {
     };
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
     chart.draw(data, options);
-	 var curval=0;
-	 var run = setInterval(function() { 
+    var curval=0;
+    var run = setInterval(function() { 
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     jQuery.get(url_,function (data) {curval=1*data;},'text');
 	 var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['mH2O',Math.floor(0.1*curval)],
+        ['mH2O',Math.round(0.1*curval)],
         ]);
       chart.draw(data, options);
       }, 5000);
