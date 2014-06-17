@@ -12,28 +12,35 @@ body {
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-<script src="http://www.rgraph.net/libraries/combined/RGraph.common.core.js" ></script>
-<script src="http://www.rgraph.net/libraries/combined/RGraph.bar.js" ></script>
-<script src="http://www.rgraph.net/libraries/combined/RGraph.line.js" ></script>
 <script type='text/javascript'>
-    var line = new RGraph.Line('cvs', [8,9,15,16,21,23, 4, 6,21,15,18,11])
-        .set('spline', true)
-        .set('numxticks', 11)
-        .set('numyticks', 5)
-        .set('background.grid.autofit.numvlines', 11)
-        .set('colors', ['red'])
-        .set('linewidth', 5)
-        .set('gutter.left', 40)
-        .set('gutter.right', 15)
-        .set('labels',['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])
-        .set('shadow',true)
-        .set('shadow.color','#aaa')
-        .set('shadow.blur',5)
-        .set('tickmarks',null)
-        .draw();
+
   google.load('visualization', '1', {packages:['gauge']});
   google.setOnLoadCallback(drawChart);
-  function drawChart() {
+$(document).ready(function () {
+      var data = [];
+      var t = new Date();
+      for (var i = 10; i >= 0; i--) {
+        var x = new Date(t.getTime() - i * 1000);
+        data.push([x, Math.random()]);
+      }
+
+      var g = new Dygraph(document.getElementById("div_g"), data,
+                          {
+                            drawPoints: true,
+                            showRoller: true,
+                            valueRange: [0.0, 1.2],
+                            labels: ['Time', 'Random']
+                          });
+      // It sucks that these things aren't objects, and we need to store state in window.
+      window.intervalId = setInterval(function() {
+        var x = new Date();  // current time
+        var y = Math.random();
+        data.push([x, y]);
+        g.updateOptions( { 'file': data } );
+      }, 10000);
+    }
+);
+function drawChart() {
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     var curval=0;
     var options = {
@@ -69,5 +76,10 @@ body {
 </head>
 <body onload='drawChart()'>
   <div id='chart_div'></div>
+  <div id="div_g" style="width:600px; height:300px;"></div>
+<p>This test is modeled after a 
+<a href="http://www.highcharts.com/demo/?example=dynamic-update&amp;theme=default">highcharts
+test</a>. New points should appear once per second. Try zooming and 
+panning over to the right edge to watch them show up.</p>
 </body>
 </html>
