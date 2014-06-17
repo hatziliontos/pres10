@@ -13,19 +13,10 @@ body {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type='text/javascript' src='https://www.google.com/jsapi'></script>
 <script type='text/javascript' src='http://dygraphs.com/1.0.1/dygraph-combined.js'></script>
-
 <script type='text/javascript'>
   google.load('visualization', '1', {packages:['gauge']});
   google.setOnLoadCallback(drawChart);
 function drawChart() {
-    var data = [];
-    var g = new Dygraph(document.getElementById("div_g"), data,
-      {
-                            drawPoints: true,
-                            showRoller: true,
-                            valueRange: [500, 600],
-                            labels: ['Time', 'kPa']
-                          });
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     var curval=0;
     var options = {
@@ -48,6 +39,8 @@ function drawChart() {
         ['kPa',Math.round(1*curval)],
     ]);
     chart.draw(data, options);
+    var data2 = [];
+    var g = new Dygraph(document.getElementById("div_g"), data2,{drawPoints: true,showRoller: true,valueRange: [500, 600],labels: ['Time', 'kPa']});
     var run = setInterval(function() { 
       jQuery.get(url_,function (data) {curval=1*data;},'text');
       var data = google.visualization.arrayToDataTable([
@@ -57,8 +50,8 @@ function drawChart() {
       chart.draw(data, options);
         var x = new Date();  // current time
         var y=1*curval;
-        data.push([x, y]);
-        g.updateOptions( { 'file': data } );
+        data2.push([x, y]);
+        g.updateOptions( { 'file': data2 } );
     }, 10000);
   }
 </script>
