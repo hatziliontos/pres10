@@ -1,0 +1,55 @@
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<title>Συνεχής Επιτήρηση Υδραυλικής Πίεσης</title>
+<style type="text/css">
+body {
+   font-family:verdana,arial,sans-serif;
+   font-size:10pt;
+   margin:30px;
+   background-color:#7CFC00;
+   }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type='text/javascript'>
+  google.load('visualization', '1', {packages:['gauge']});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+    var curval=0;
+    var options = {
+      min:         0, max:      70,
+      width:     350, height:  350,
+      redFrom:     0, redTo:    30,
+      greenFrom:  30, greenTo:  50,
+      yellowFrom: 50, yellowTo: 70,
+      minorTicks: 10,
+      animation:{
+          duration: 2000,
+          easing: 'inAndOut',
+        },
+      majorTicks : ['0','10','20','30','40','50','60','70']
+    };
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    jQuery.get(url_,function (data) {curval=1*data;},'text');
+    var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['mH2O',Math.round(0.1*curval)],
+    ]);
+    chart.draw(data, options);
+    var run = setInterval(function() { 
+      jQuery.get(url_,function (data) {curval=1*data;},'text');
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['mH2O',Math.round(0.1*curval)],
+      ]);
+      chart.draw(data, options);
+    }, 10000);
+  }
+</script>
+</head>
+<body onload='drawChart()'>
+  <div id='chart_div'></div>
+</body>
+</html>
