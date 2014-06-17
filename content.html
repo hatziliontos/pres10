@@ -21,7 +21,7 @@ function drawChart() {
     var curval=0;
     var options = {
       min:         0, max:     700,
-      width:     350, height:  350,
+      width:     300, height:  300,
       redFrom:     0, redTo:   300,
       greenFrom: 300, greenTo: 500,
       yellowFrom:500, yellowTo:700,
@@ -48,16 +48,16 @@ function drawChart() {
         ['kPa',Math.round(1*curval)],
       ]);
       chart.draw(data, options);
-        var x = new Date();  // current time
-        var y=1*curval;
-        data2.push([x, y]);
-        g.updateOptions( { 'file': data2 } );
+      var x = new Date();  // current time
+      var y=1*curval;
+      data2.push([x, y]);
+      g.updateOptions( { 'file': data2 } );
     }, 10000);
   }
 </script>
 </head>
 <body onload='drawChart()'>
+  <div id="div_g" style="width:800px; height:300px;"></div>
   <div id='chart_div'></div>
-  <div id="div_g" style="width:400px; height:300px;"></div>
 </body>
 </html>
