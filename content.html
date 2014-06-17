@@ -16,10 +16,8 @@ body {
   google.load('visualization', '1', {packages:['gauge']});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Label', 'Value'],
-      ['mH2O',0],
-    ]);
+    var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+    var curval=0;
     var options = {
       min:         0, max:      70,
       width:     440, height:  440,
@@ -34,14 +32,11 @@ body {
       majorTicks : ['0','10','20','30','40','50','60','70']
     };
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-    chart.draw(data, options);
-    var curval=0;
-    var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     jQuery.get(url_,function (data) {curval=1*data;},'text');
-	 var data = google.visualization.arrayToDataTable([
+    var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
         ['mH2O',Math.round(0.1*curval)],
-        ]);
+    ]);
     chart.draw(data, options);
     var run = setInterval(function() { 
     jQuery.get(url_,function (data) {curval=1*data;},'text');
