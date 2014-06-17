@@ -12,7 +12,23 @@ body {
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script src="/libraries/combined/RGraph.common.core.js/RGraph.bar.js/RGraph.bipolar.js/RGraph.hbar.js/RGraph.line.js/RGraph.pie.js" ></script>
 <script type='text/javascript'>
+    var line = new RGraph.Line('cvs', [8,9,15,16,21,23, 4, 6,21,15,18,11])
+        .set('spline', true)
+        .set('numxticks', 11)
+        .set('numyticks', 5)
+        .set('background.grid.autofit.numvlines', 11)
+        .set('colors', ['red'])
+        .set('linewidth', 5)
+        .set('gutter.left', 40)
+        .set('gutter.right', 15)
+        .set('labels',['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])
+        .set('shadow',true)
+        .set('shadow.color','#aaa')
+        .set('shadow.blur',5)
+        .set('tickmarks',null)
+        .draw();
   google.load('visualization', '1', {packages:['gauge']});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
