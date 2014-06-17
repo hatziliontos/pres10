@@ -36,8 +36,14 @@ body {
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
     chart.draw(data, options);
     var curval=0;
-    var run = setInterval(function() { 
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+    jQuery.get(url_,function (data) {curval=1*data;},'text');
+	 var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['mH2O',Math.round(0.1*curval)],
+        ]);
+    chart.draw(data, options);
+    var run = setInterval(function() { 
     jQuery.get(url_,function (data) {curval=1*data;},'text');
 	 var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
