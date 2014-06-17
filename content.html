@@ -19,30 +19,30 @@ body {
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     var curval=0;
     var options = {
-      min:         0, max:      70,
+      min:         0, max:     700,
       width:     350, height:  350,
-      redFrom:     0, redTo:    30,
-      greenFrom:  30, greenTo:  50,
-      yellowFrom: 50, yellowTo: 70,
-      minorTicks: 10,
+      redFrom:     0, redTo:   300,
+      greenFrom: 300, greenTo: 500,
+      yellowFrom:500, yellowTo:700,
+      minorTicks: 100,
       animation:{
           duration: 2000,
           easing: 'inAndOut',
         },
-      majorTicks : ['0','10','20','30','40','50','60','70']
+      majorTicks : ['0','100','200','300','400','500','600','700']
     };
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
     jQuery.get(url_,function (data) {curval=1*data;},'text');
     var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['mH2O',Math.round(0.1*curval)],
+        ['kPa',Math.round(1*curval)],
     ]);
     chart.draw(data, options);
     var run = setInterval(function() { 
       jQuery.get(url_,function (data) {curval=1*data;},'text');
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['mH2O',Math.round(0.1*curval)],
+        ['kPa',Math.round(1*curval)],
       ]);
       chart.draw(data, options);
     }, 10000);
