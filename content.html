@@ -19,6 +19,8 @@ body {
 function drawChart() {
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     var curval=0;
+    var maxval=0;
+    var minval=1000;
     var options = {
       min:         0, max:     700,
       width:     300, height:  300,
@@ -47,6 +49,10 @@ function drawChart() {
         ['Label', 'Value'],
         ['kPa',Math.round(1*curval)],
       ]);
+      if (curval>maxval) {maxval=curval;}
+      if (curval<minval) {minval=curval;}
+      options.min=minval;
+      options.max=maxval;
       chart.draw(data, options);
       var x = new Date();  // current time
       var y=1*curval;
