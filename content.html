@@ -51,12 +51,11 @@ function drawChart() {
       ]);
       if (curval>maxval) {maxval=curval;}
       if (curval<minval) {minval=curval;}
-      options.min=minval;
-      options.max=maxval;
       chart.draw(data, options);
       var x = new Date();  // current time
       var y=1*curval;
       data2.push([x, y]);
+      g.updateOptions( { 'valueRange': [minval,maxval] } );
       g.updateOptions( { 'file': data2 } );
     }, 10000);
   }
