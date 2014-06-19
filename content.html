@@ -14,44 +14,17 @@ body {
 <script type='text/javascript' src='https://www.google.com/jsapi'></script>
 <script type='text/javascript' src='http://dygraphs.com/1.0.1/dygraph-combined.js'></script>
 <script type='text/javascript'>
-  google.load('visualization', '1', {packages:['gauge']});
-  google.setOnLoadCallback(drawChart);
 function drawChart() {
     var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
     var curval=0;
     var maxval=0;
     var minval=1000;
-    var options = {
-      min:         0, max:     700,
-      width:     400, height:  120,
-      redFrom:     0, redTo:   300,
-      greenFrom: 300, greenTo: 500,
-      yellowFrom:500, yellowTo:700,
-      minorTicks: 10,
-      animation:{
-          duration: 2000,
-          easing: 'inAndOut',
-        },
-      majorTicks : ['0','100','200','300','400','500','600','700']
-    };
-    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-    jQuery.get(url_,function (data) {curval=1*data;},'text');
-    var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['kPa',Math.round(1*curval)],
-    ]);
-    chart.draw(data, options);
     var data2 = [];
-    var g = new Dygraph(document.getElementById("div_g"), data2,{drawPoints: true,showRoller: true,valueRange: [500, 600],labels: ['Time', 'kPa']});
+    var g = new Dygraph(document.getElementById("div_g"), data2,{drawPoints: true,showRoller: true,valueRange: [0, 1000],labels: ['Time', 'kPa']});
     var run = setInterval(function() { 
       jQuery.get(url_,function (data) {curval=1*data;},'text');
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['kPa',Math.round(1*curval)],
-      ]);
       if (curval>maxval) {maxval=curval;}
       if (curval<minval) {minval=curval;}
-      chart.draw(data, options);
       var x = new Date();  // current time
       var y=1*curval;
       data2.push([x, y]);
@@ -62,7 +35,6 @@ function drawChart() {
 </script>
 </head>
 <body onload='drawChart()'>
-  <div id="div_g" style="width:1000px; height:500px;"></div>
-  <div id='chart_div'></div>
+  <div id="div_g" style="width:1250px; height:450px;"></div>
 </body>
 </html>
