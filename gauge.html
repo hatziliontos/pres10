@@ -1,21 +1,58 @@
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-<script language='JavaScript' type='text/JavaScript'>
-function load() { 
-}
-</script>
-<title>Συνεχής Επιτήρηση</title>
+<title>Συνεχής Επιτήρηση Υδραυλικής Πίεσης</title>
 <style type="text/css">
 body {
    font-family:verdana,arial,sans-serif;
-   font-size:9pt;
-   margin:10px;
-   background-color:#00BFFF;
-}
+   font-size:10pt;
+   margin:30px;
+   background-color:#7CFC00;
+   }
 </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type='text/javascript' src='http://dygraphs.com/1.0.1/dygraph-combined.js'></script>
+<script type='text/javascript'>
+  google.load('visualization', '1', {packages:['gauge']});
+  google.setOnLoadCallback(drawChart);
+function drawChart() {
+    var url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+    var curval=0;
+    var maxval=0;
+    var minval=1000;
+    var options = {
+      min:         0, max:     700,
+      width:     400, height:  120,
+      redFrom:     0, redTo:   300,
+      greenFrom: 300, greenTo: 500,
+      yellowFrom:500, yellowTo:700,
+      minorTicks: 10,
+      animation:{
+          duration: 2000,
+          easing: 'inAndOut',
+        },
+      majorTicks : ['0','100','200','300','400','500','600','700']
+    };
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    jQuery.get(url_,function (data) {curval=1*data;},'text');
+    var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['kPa',Math.round(1*curval)],
+    ]);
+    chart.draw(data, options);
+    var run = setInterval(function() { 
+      jQuery.get(url_,function (data) {curval=1*data;},'text');
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['kPa',Math.round(1*curval)],
+      ]);
+      chart.draw(data, options);
+    }, 10000);
+  }
+</script>
 </head>
-<body onload="load">
-<h3>Gauge</h3>
+<body onload='drawChart()'>
+  <div id='chart_div'></div>
 </body>
 </html>
