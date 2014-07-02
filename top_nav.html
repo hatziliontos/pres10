@@ -6,7 +6,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script language='JavaScript' type='text/JavaScript'>
 function load() {
-  url_='http://pres10.no-ip.org:22226';
+  url_='http://mez5.dyndns.org:22226';
   jQuery.get(url_+'/Backup/lan_ip.log',        function (data) {document.getElementById("lanip").innerHTML="LANIP:"+data;},'text');
   jQuery.get(url_+'/Backup/wget_dyndns_IP.log',function (data) {document.getElementById("wanip").innerHTML="WANIP:"+data;},'text');
   url_='http://htmlpreview.github.io/?https://github.com/hatziliontos/common/blob/master/';
@@ -16,7 +16,7 @@ function load() {
   curval_();
 }
 function curval_() {
-  url_='http://pres10.no-ip.org:22226/test.js?query=CurVal';
+  url_='http://mez5.dyndns.org:22226/test.js?query=CurVal';
   jQuery.get(url_,function (data) {document.getElementById("curval").innerHTML="CurVal:"+data+"mH2O";},'text');
   setTimeout(curval_, 20000);
 }
