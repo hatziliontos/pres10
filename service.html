@@ -3,7 +3,7 @@
 <head>
 <script language='JavaScript' type='text/JavaScript'>
 function load() { 
-  url_='http://mez5.dyndns.org:22226';
+  url_='http://iot2014iot.no-ip.org:22226';
   document.getElementById("wget_dyndns_IP").href=url_+'/Backup/wget_dyndns_IP.log';
   document.getElementById("lan_ip"        ).href=url_+'/Backup/lan_ip.log';
   document.getElementById("ddclient_cache").href=url_+'/ddclient.cache';
@@ -16,6 +16,7 @@ function load() {
   document.getElementById("usb-devices"   ).href=url_+'/Backup/usb-devices.log';    document.getElementById("usb-devices_"   ).href=url_+'/test.js?query=usb-devices';
   document.getElementById("df"            ).href=url_+'/Backup/df.log';             document.getElementById("df_"            ).href=url_+'/test.js?query=df';
   document.getElementById("psaux"         ).href=url_+'/Backup/psaux.log';          document.getElementById("psaux_"         ).href=url_+'/test.js?query=psaux';
+                                                                                    document.getElementById("reboot_"        ).href=url_+'/test.js?query=reboot';
   document.getElementById("restarts"      ).href=url_+'/restarts.txt';
   document.getElementById("bdb_sda1"      ).href=url_+'/Backup/bdb_sda1.log';       document.getElementById("bdb_sda1_"      ).href=url_+'/test.js?query=bdb';
   document.getElementById("bdb_mmcblk0p1" ).href=url_+'/Backup/bdb_mmcblk0p1.log';
@@ -27,13 +28,13 @@ function load() {
   document.getElementById("fsck_mmcblk0p5").href=url_+'/Backup/fsck_mmcblk0p5.log';
 }
 </script>
-<title>Συνεχής Επιτήρηση Υδραυλικής Πίεσης</title>
+<title>Συνεχής Ενεργειακή Επιτήρηση</title>
 <style type="text/css">
 body {
    font-family:verdana,arial,sans-serif;
    font-size:8pt;
    margin:10px;
-   background-color:#00BFFF;
+   background-color:#ff6600;
    }
 </style>
 </head>
@@ -53,6 +54,7 @@ body {
 <p><a href="" target="content" id="usb-devices"   >USB devices         </a>|<a href="" target="content" id="usb-devices_"   >..</a></p>
 <p><a href="" target="content" id="df"            >FS stats            </a>|<a href="" target="content" id="df_"            >..</a></p>
 <p><a href="" target="content" id="psaux"         >Processes           </a>|<a href="" target="content" id="psaux_"         >..</a></p>
+<p><a href="" target="content"                    >                    </a>|<a href="" target="content" id="reboot_"        >REBOOT</a></p>
 <h4>File system</h4>
 <p><a href="" target="content" id="restarts"      >Restarts            </a></p>
 <p><a href="" target="content" id="bdb_sda1"      >sda1 Bad blocks     </a>|<a href="" target="content" id="bdb_sda1_"      >..</a></p>
