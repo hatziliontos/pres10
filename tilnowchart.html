@@ -15,14 +15,13 @@ body {
 <script type='text/javascript' src='http://dygraphs.com/1.0.1/dygraph-combined.js'></script>
 <script type='text/javascript'>
 function drawChart() {
-    var url_='http://pres10.no-ip.org:22226'+'/Backup/'+daten.getFullYear()+'_'+('00'+(1*daten.getMonth()+1)).slice(-2)+'_'+('00'+daten.getDate()).slice(-2)+'.txt';
-    var g = new Dygraph(document.getElementById("div_g"),url_,{
-    drawPoints:true,showRoller:true,valueRange:[250, 600]});
+   var daten=new Date();
+   var url_='http://pres10.no-ip.org:22226'+'/Backup/'+daten.getFullYear()+'_'+('00'+(1*daten.getMonth()+1)).slice(-2)+'_'+('00'+daten.getDate()).slice(-2)+'.txt';
+   var g = new Dygraph(document.getElementById("div_g"),url_,{drawPoints:true,showRoller:true,valueRange:[250, 600]});
   }
 </script>
 </head>
 <body onload='drawChart()'>
   <div id="div_g" style="width:1250px; height:500px;"></div>
-  <p><a id="test" href="" >Ημερήσια Αρχεία</a></p>
 </body>
 </html>
