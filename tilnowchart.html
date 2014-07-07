@@ -15,22 +15,7 @@ body {
 <script type='text/javascript' src='http://dygraphs.com/1.0.1/dygraph-combined.js'></script>
 <script type='text/javascript'>
 function drawChart() {
-    var url_='http://pres10.no-ip.org:22226/Backup/2014_07_05.txt';
-    var curval=0;
-    var maxval=0;
-    var minval=1000;
-    var data2=["",""];
-    //jQuery.get(url_,function (data) {data2=data},'text');
-//    $.ajax({url: url_,dataType: "text", success: function(data) {
-//      data2=data.toString().split("\n");
-//      data3="Time,kPa\n"
-//      for(i in data2) {
-//      for (i = 0; i < data2.length-1; i++) { 
-//          row_=data2[i].split("+");
-//          data3=data3+row_[0]+','+row_[1]+'\n';
-//          console.log(i+">>>"+data3[i]);
-//      }
-//    }});
+    var url_='http://pres10.no-ip.org:22226'+'/Backup/'+daten.getFullYear()+'_'+('00'+(1*daten.getMonth()+1)).slice(-2)+'_'+('00'+daten.getDate()).slice(-2)+'.txt';
     var g = new Dygraph(document.getElementById("div_g"),url_,{
     drawPoints:true,showRoller:true,valueRange:[250, 600]});
   }
