@@ -4,7 +4,7 @@ A simple web server-client application to remotely monitor some critical system 
 A Raspberry Pi Model B plays the role of a web server which is constantly monitoring pressure values of a 0-10bar piezoelectric sensor, installed on a municipal water distribution pipe.
 The sensor is connected to a Lantronix xsenso 4-20mA converter.
 Both RaspB+Lantronix belong to the same local ethernet subnetwork.
-Code inside RaspB is a node.js file which performs specific cyclic operations.
+Code running inside RaspB is a node.js file which performs specific cyclic operations.
 
 User Interface
 ======
@@ -34,3 +34,7 @@ After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου
 ![15minresults](https://cloud.githubusercontent.com/assets/6866345/3531155/847836e2-07ac-11e4-960d-79fb29610575.png)
                 Επιτήρηση Αρχείου->Ημερήσια Αρχεία->Μετρήσεις 15λεπτου the user is able to watch the table with last 15min records.
                 Επιτήρηση Αρχείου->Ημερήσια Αρχεία->Μετρήσεις 24ωρου the user is able to watch the table with last 24hours records.
+service.html
+======
+![service](https://cloud.githubusercontent.com/assets/6866345/3531368/da691e98-07ae-11e4-8d8c-9e0a8c9fe2aa.png)
+After clicking at Service option the user has many options to select concerning various OS parameters. RaspiB runs with a special version of Arch Linux.
