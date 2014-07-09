@@ -12,7 +12,7 @@ Client operations are implemented by a few html files. The central file frames.h
 
 top_nav.html
 ======
-top_nav.html gives user 5 hot link options, Επιτήρηση Αρχείου (local_history.html), Service (service.html), Σχετικά (about.html), Βοήθεια (help.html), Ανακοινώσεις (newsletter.html). Above the options there is an informative application title (Συνεχής Επιτήρηση Υδραυλικής Πίεσης Καλλικράτειας) and the IP network address (internet plus intranet IP). User can also watch the current measured water pressure value.
+top_nav.html gives user 5 hot link options, Επιτήρηση Αρχείου (local_history.html), Service (service.html), Σχετικά (about.html), Βοήθεια (help.html), Ανακοινώσεις (newsletter.html). Above the options there is an informative application title (Συνεχής Επιτήρηση Υδραυλικής Πίεσης Καλλικράτειας) and the server IP network address (internet plus intranet IP). User can also watch the current measured water pressure value.
 
 gauge.html
 ======
@@ -21,3 +21,8 @@ gauge.html is a special Google Gauge and simulates the pump manometer gauge oper
 content.html
 ======
 ![frames](https://cloud.githubusercontent.com/assets/6866345/3530270/e78114a2-07a2-11e4-91fb-82e6c30b150d.png)
+It simply displays a Google Line Chart with the last recorded pressure values. Chart is refreshing every 10-20 sec.
+
+tilnowchart.html
+======
+After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου 
