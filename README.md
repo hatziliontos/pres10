@@ -1,7 +1,7 @@
 pres10
 ======
 A simple web server-client application to remotely monitor some critical system parameters.
-A Raspberry Pi Model B plays the role of a web server which is constantly monitoring pressure values of a piezoelectric sensor, installed on a municipal water distribution pipe.
+A Raspberry Pi Model B plays the role of a web server which is constantly monitoring pressure values of a 0-10bar piezoelectric sensor, installed on a municipal water distribution pipe.
 The sensor is connected to a Lantronix xsenso 4-20mA converter.
 Both RaspB+Lantronix belong to the same local ethernet subnetwork.
 Code inside RaspB is a node.js file which performs specific cyclic operations.
@@ -12,4 +12,6 @@ Client operations are implemented by a few html files. The central file frames.h
 
 top_nav.html
 ======
+top_nav.html gives user 5 hot link options, Επιτήρηση Αρχείου (local_history.html), Service (service.html), Σχετικά (about.html), Βοήθεια (help.html), Ανακοινώσεις (newsletter.html).
+
 
