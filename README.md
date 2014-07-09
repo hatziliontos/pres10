@@ -20,3 +20,4 @@ gauge.html is a special Google Gauge and simulates the pump manometer gauge oper
 
 content.html
 ======
+![frames](https://cloud.githubusercontent.com/assets/6866345/3530270/e78114a2-07a2-11e4-91fb-82e6c30b150d.png)
