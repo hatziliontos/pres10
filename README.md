@@ -29,4 +29,5 @@ local_history.html
 After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου the user is able to watch current day recorded values.
 ![dirtxt](https://cloud.githubusercontent.com/assets/6866345/3530726/939313b8-07a7-11e4-9e3b-50060dc31cb4.png)
 After selecting Επιτήρηση Αρχείου->Ημερήσια Αρχεία the user is able to watch files with daily records.
-
+![resultsrecord](https://cloud.githubusercontent.com/assets/6866345/3530923/ea6a0924-07a9-11e4-8b84-875280b8badc.png)
+After selecting Επιτήρηση Αρχείου->Ημερήσια Αρχεία->linked file the user is able to watch the table with this day records.
