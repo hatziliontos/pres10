@@ -12,6 +12,11 @@ Client operations are implemented by a few html files. The central file frames.h
 
 top_nav.html
 ======
-top_nav.html gives user 5 hot link options, Επιτήρηση Αρχείου (local_history.html), Service (service.html), Σχετικά (about.html), Βοήθεια (help.html), Ανακοινώσεις (newsletter.html).
+top_nav.html gives user 5 hot link options, Επιτήρηση Αρχείου (local_history.html), Service (service.html), Σχετικά (about.html), Βοήθεια (help.html), Ανακοινώσεις (newsletter.html). Above the options there is an informative application title (Συνεχής Επιτήρηση Υδραυλικής Πίεσης Καλλικράτειας) and the IP network address (internet plus intranet IP). User can also watch the current measured water pressure value.
 
+gauge.html
+======
+gauge.html is a special Google Gauge and simulates the pump manometer gauge operation. Displayed ranges are divided in 3 colored ranges, low - medium - high pressure range.
 
+content.html
+======
