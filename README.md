@@ -28,6 +28,9 @@ local_history.html
 ![tilnowchart](https://cloud.githubusercontent.com/assets/6866345/3530378/d506440e-07a3-11e4-82ca-3de9c7aebb79.png)
 After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου the user is able to watch current day recorded values.
 ![dirtxt](https://cloud.githubusercontent.com/assets/6866345/3530726/939313b8-07a7-11e4-9e3b-50060dc31cb4.png)
-After selecting Επιτήρηση Αρχείου->Ημερήσια Αρχεία the user is able to watch files with daily records.
+                Επιτήρηση Αρχείου->Ημερήσια Αρχεία the user is able to watch files with daily records.
 ![resultsrecord](https://cloud.githubusercontent.com/assets/6866345/3530923/ea6a0924-07a9-11e4-8b84-875280b8badc.png)
-After selecting Επιτήρηση Αρχείου->Ημερήσια Αρχεία->linked file the user is able to watch the table with this day records.
+                Επιτήρηση Αρχείου->Ημερήσια Αρχεία->linked file the user is able to watch the table with this day records.
+![15minresults](https://cloud.githubusercontent.com/assets/6866345/3531155/847836e2-07ac-11e4-960d-79fb29610575.png)
+                Επιτήρηση Αρχείου->Ημερήσια Αρχεία->Μετρήσεις 15λεπτου the user is able to watch the table with last 15min records.
+                Επιτήρηση Αρχείου->Ημερήσια Αρχεία->Μετρήσεις 24ωρου the user is able to watch the table with last 24hours records.
