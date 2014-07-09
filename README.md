@@ -25,4 +25,6 @@ It simply displays a Google Line Chart with the last recorded pressure values. C
 
 tilnowchart.html
 ======
-After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου 
+![tilnowchart](https://cloud.githubusercontent.com/assets/6866345/3530378/d506440e-07a3-11e4-82ca-3de9c7aebb79.png)
+After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου the user is able to watch current day recorded values.
+
