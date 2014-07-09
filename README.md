@@ -8,4 +8,8 @@ Code inside RaspB is a node.js file which performs specific cyclic operations.
 
 User Interface
 ======
-Client operations are implemented by a few html files. The central file frames.html constructs user interface which consists of four frames, top_nav.html a navigation frame located on the top of screen, local_history.html a navigation frame located on the left of screen,  
+Client operations are implemented by a few html files. The central file frames.html constructs user interface which consists of four frames, top_nav.html a navigation frame located on the top of screen, local_history.html a navigation frame located on the left of screen, gauge.html a value indicating gauge located on the top right of screen and content.html a central displaying frame located on the center of screen.
+
+top_nav.html
+======
+
