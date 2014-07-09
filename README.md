@@ -23,8 +23,10 @@ content.html
 ![frames](https://cloud.githubusercontent.com/assets/6866345/3530270/e78114a2-07a2-11e4-91fb-82e6c30b150d.png)
 It simply displays a Google Line Chart with the last recorded pressure values. Chart is refreshing every 10-20 sec.
 
-tilnowchart.html
+local_history.html
 ======
 ![tilnowchart](https://cloud.githubusercontent.com/assets/6866345/3530378/d506440e-07a3-11e4-82ca-3de9c7aebb79.png)
 After selecting Επιτήρηση Αρχείου->Μετρήσεις 24ωρου the user is able to watch current day recorded values.
+![dirtxt](https://cloud.githubusercontent.com/assets/6866345/3530726/939313b8-07a7-11e4-9e3b-50060dc31cb4.png)
+After selecting Επιτήρηση Αρχείου->Ημερήσια Αρχεία the user is able to watch files with daily records.
 
